@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from "./index.module.css"
 
 
-const thanks = ['Thank you for taking the time to speak with us today',
+const thanks = ['Thank you for taking the time to speak with us today. ',
  'Thank you for sharing your valuable insights with us.', 
  'Thank you for sharing your expertise with us.',
  'Thank you for sharing your knowledge with us.',
@@ -48,7 +48,7 @@ export default function Home() {
     console.log('********* RANDOM NUMBER ********', roundedNumber)
   const newThanks = thanks[roundedNumber]
     setThanks(newThanks);
-    setInRegards('In regards to ' + topicInput)
+    setInRegards('. Just a quick question, In regards to ' + topicInput)
     setTopicInput("");
   }
 
