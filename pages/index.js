@@ -29,7 +29,7 @@ export default function Home() {
   async function onSubmit(event) { //When form is submited
     console.log('Form Submited')
     event.preventDefault(); //Stop page from re-loading
-    const response = await fetch("/api/generate", { //fetch to OpenAI API using the code in apo/generate
+    const response = await fetch("./api/generate", { //fetch to OpenAI API using the code in apo/generate
       method: "POST",
       headers: {
         "Content-Type": "application/json",
