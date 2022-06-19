@@ -62,6 +62,7 @@ export default function Home() {
       <main className={styles.main}>
         <img src="/techqs-logo.png" className={styles.icon} />
         <h3>TechQs V1.0.1 - Generate questions for Tech presentations...</h3>
+        
         <form onSubmit={onSubmit}>
           <input
             type="text"
@@ -70,10 +71,11 @@ export default function Home() {
             value={topicInput}
             onChange={(e) => setTopicInput(e.target.value)}
           />
+          <h2>Please wait a few seconds after pressing the button. Please press only ONCE and wait</h2>
           <input type="submit" value="Generate Questions" />
         </form>
-        <div className={styles.result}>{thanksM}</div>
-        <div className={styles.result}>{inRegards}</div>
+        <p className={styles.result}>{thanksM}</p>
+        <p  className={styles.result}>{inRegards}</p>
         <div className={styles.result}>{result}</div>
       </main>
     </div>

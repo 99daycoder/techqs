@@ -8,8 +8,6 @@ Create the greeting part. To save API tokens, generate 20, and create an object,
  * 
  */
 
-
-import axios from "axios";
 import { Configuration, OpenAIApi } from "openai";
 
 const configuration = new Configuration({
