@@ -9,6 +9,7 @@ Create the greeting part. To save API tokens, generate 20, and create an object,
  */
 
 
+import axios from "axios";
 import { Configuration, OpenAIApi } from "openai";
 
 const configuration = new Configuration({
@@ -17,15 +18,20 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 export default async function (req, res) {
+ 
+
   const completion = await openai.createCompletion({
     model: "text-davinci-002",
     prompt: generatePrompt(req.body.topic),
     temperature: 0.6,  max_tokens: 500,
   });
+ 
+
   res.status(200).json({ result: completion.data.choices[0].text }); //
   console.log(completion.data)
   //console.log('complication JSON file..... ******: ', res.json(completion))
  
+
 }
 
 

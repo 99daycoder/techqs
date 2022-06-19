@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
-import styles from "./index.module.css";
+import styles from "./index.module.css"
+import axios from "axios";
 
 const thanks = ['Thank you for taking the time to speak with us today',
  'Thank you for sharing your valuable insights with us.', 
@@ -55,7 +56,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <img src="/techqs-logo.png" className={styles.icon} />
-        <h3>TechQs - Generate questions for Tech presentations...</h3>
+        <h3>TechQs V1.0.1 - Generate questions for Tech presentations...</h3>
         <form onSubmit={onSubmit}>
           <input
             type="text"
