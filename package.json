@@ -1,8 +1,11 @@
 {
+  "homepage":"http://99daycoder.github.io/techqs",
   "name": "openai-quickstart-node",
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
@@ -12,5 +15,9 @@
     "openai": "^3.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
+ 
