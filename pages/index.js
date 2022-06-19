@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import styles from "./index.module.css"
-import axios from "axios";
+
 
 const thanks = ['Thank you for taking the time to speak with us today',
  'Thank you for sharing your valuable insights with us.', 
@@ -27,17 +27,22 @@ export default function Home() {
   const [inRegards, setInRegards] = useState(); 
 
   async function onSubmit(event) { //When form is submited
+    console.log('Form Submited')
     event.preventDefault(); //Stop page from re-loading
     const response = await fetch("/api/generate", { //fetch to OpenAI API using the code in apo/generate
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
+      
       body: JSON.stringify({ topic: topicInput }), //send topic variable to OpenAI, with value of topicInpit from text box
     });
+
+    console.log('Fetch Success')
     const data = await response.json();
+    console.log('Data is ...', data)
     setResult(data.result); //result state now updated.
-   
+    console.log('Line 45 Executed....')
     const randomNumber = Math.random(12)*12
     const roundedNumber = Math.floor(randomNumber)
     console.log('********* RANDOM NUMBER ********', roundedNumber)
