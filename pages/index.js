@@ -74,9 +74,11 @@ export default function Home() {
           <h2>Please wait a few seconds after pressing the button. Please press only ONCE and wait</h2>
           <input type="submit" value="Generate Questions" />
         </form>
-        <p className={styles.result}>{thanksM}</p>
-        <p  className={styles.result}>{inRegards}</p>
-        <div className={styles.result}>{result}</div>
+        <div className={styles.result} >
+        <span > {thanksM} </span>
+        <span  className={styles.result}> {inRegards} </span>
+        <span> {result} </span>
+        </div>
       </main>
     </div>
   );
