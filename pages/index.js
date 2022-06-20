@@ -25,10 +25,11 @@ export default function Home() {
   const [result, setResult] = useState();
   const [thanksM, setThanks] = useState(); 
   const [inRegards, setInRegards] = useState(); 
-
+  const [disable, setDisable] = useState([false, 'Generate Questions'])
   async function onSubmit(event) { //When form is submited
     console.log('Form Submited')
     event.preventDefault(); //Stop page from re-loading
+    setDisable([true, 'Loading...'])
     const response = await fetch("./api/generate", { //fetch to OpenAI API using the code in apo/generate
       method: "POST",
       headers: {
@@ -50,6 +51,7 @@ export default function Home() {
     setThanks(newThanks);
     setInRegards('. Just a quick question, In regards to ' + topicInput)
     setTopicInput("");
+    setDisable([false, 'Generate Questions'])
   }
 
   return (
@@ -71,8 +73,8 @@ export default function Home() {
             value={topicInput}
             onChange={(e) => setTopicInput(e.target.value)}
           />
-          <h2>Please wait a few seconds after pressing the button. Please press only ONCE and wait</h2>
-          <input type="submit" value="Generate Questions" />
+ 
+          <input type="submit" value={disable[1]} disabled={ disable[0] } />
         </form>
         <div className={styles.result} >
         <span > {thanksM} </span>

@@ -60,6 +60,13 @@
   text-align: center;
   cursor: pointer;
 }
+
+
+.main input[type="submit"]:disabled{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
 .main .result {
   font-weight: bold;
   margin-top: 40px;

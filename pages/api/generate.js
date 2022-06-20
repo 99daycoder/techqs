@@ -43,7 +43,7 @@ function generatePrompt(topic) {
    
   return `Suggest five questions for a topic that is related to  web development.
 Topic: React
-Questions: Why are other React alternatives that you've considered?, Why did you choose React?, What are the advantages of using React vs NextJs?, What is the job interview process like at your company?, How do you support your developers?
+Questions: What are other React alternatives that you've considered?, Why did you choose React?, What are the advantages of using React vs NextJs?, What is the job interview process like at your company?, How do you support your developers?
 Topic: Javascript
 Questions: What percentage of your developers are pure Javascript developers?, Do you mainly use the ES6 version of Javascript?, Does your company use any Javascript frameworks?, Why do you expect a juniour developer to know?, How often does your company hire junior developers?
 Topic: ${capitalizedTopic}
